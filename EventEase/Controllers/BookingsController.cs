@@ -19,7 +19,7 @@ namespace EventEase.Controllers
             _context = context;
         }
 
-        // GET: Bookings
+        
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Bookings.Include(b => b.Event).Include(b => b.Venue);
