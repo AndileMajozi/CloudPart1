@@ -1,12 +1,12 @@
-﻿using EventEase; // This tells it where to find Venue, Event, and Bookings
+﻿using EventEase; 
 using EventEase.Models;
-using Microsoft.EntityFrameworkCore; // THIS IS LIKELY MISSING
+using Microsoft.EntityFrameworkCore; 
 
 namespace EventEase.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        // This constructor MUST look like this
+        
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
