@@ -19,7 +19,7 @@ namespace EventEase.Controllers
             _context = context;
         }
 
-        // GET: Events
+        
         public async Task<IActionResult> Index()
         {
             return View(await _context.Events.ToListAsync());
