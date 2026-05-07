@@ -1,0 +1,38 @@
+:root {
+    --blue: #0b5ed7;
+    --dark-blue: #063970;
+    --green: #18a558;
+    --light-green: #dff7ea;
+    --light-blue: #eaf3ff;
+    --ink: #1f2937;
+}
+
+html { font-size: 15px; min-height: 100%; }
+body {
+    min-height: 100%;
+    margin-bottom: 60px;
+    color: var(--ink);
+    background: linear-gradient(135deg, var(--light-blue), #ffffff 42%, var(--light-green));
+}
+
+.app-navbar { background: linear-gradient(90deg, var(--dark-blue), var(--blue), var(--green)); }
+.navbar-brand { letter-spacing: .3px; }
+.hero-card, .card, .table-card {
+    border: 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(6, 57, 112, .10);
+    background: rgba(255,255,255,.96);
+}
+.hero-card { padding: 42px; }
+.page-title { color: var(--dark-blue); font-weight: 800; }
+.badge-soft { background: var(--light-green); color: #0b6b3a; border-radius: 999px; padding: 8px 12px; }
+.btn-primary { background: var(--blue); border-color: var(--blue); border-radius: 12px; }
+.btn-success { background: var(--green); border-color: var(--green); border-radius: 12px; }
+.btn-outline-primary, .btn-outline-success, .btn-outline-danger, .btn-secondary { border-radius: 12px; }
+.form-control, .form-select { border-radius: 12px; }
+.venue-img { width: 100%; height: 180px; object-fit: cover; border-radius: 16px; }
+.thumb { width: 92px; height: 64px; object-fit: cover; border-radius: 12px; }
+.table { vertical-align: middle; }
+.table thead { background: var(--dark-blue); color: white; }
+.footer { background: #ffffffb8; border-top: 1px solid #d8e7f7; }
+.validation-summary-errors ul { margin-bottom: 0; }

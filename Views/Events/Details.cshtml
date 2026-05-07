@@ -1,0 +1,10 @@
+@model EventEase.Models.Event
+@{ ViewData["Title"] = "Event Details"; }
+<h1 class="page-title">Event Details</h1>
+<div class="card p-4">
+    <img src="@Model.ImageUrl" class="venue-img mb-3" />
+    <h3>@Model.EventName</h3>
+    <p>@Model.Description</p>
+    <a asp-action="Edit" asp-route-id="@Model.EventID" class="btn btn-success">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</div>

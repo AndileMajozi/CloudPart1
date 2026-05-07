@@ -1,0 +1,18 @@
+@model EventEase.Models.Venue
+@{ ViewData["Title"] = "Edit Venue"; }
+<h1 class="page-title">Edit Venue</h1>
+<div class="card p-4">
+<form asp-action="Edit" enctype="multipart/form-data">
+    <input type="hidden" asp-for="VenueID" />
+    <input type="hidden" asp-for="ImageUrl" />
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+    <div class="mb-3"><label asp-for="Name" class="form-label"></label><input asp-for="Name" class="form-control" /><span asp-validation-for="Name" class="text-danger"></span></div>
+    <div class="mb-3"><label asp-for="Location" class="form-label"></label><input asp-for="Location" class="form-control" /><span asp-validation-for="Location" class="text-danger"></span></div>
+    <div class="mb-3"><label asp-for="Capacity" class="form-label"></label><input asp-for="Capacity" class="form-control" /><span asp-validation-for="Capacity" class="text-danger"></span></div>
+    @if (!string.IsNullOrWhiteSpace(Model.ImageUrl)) { <img src="@Model.ImageUrl" class="thumb mb-3" /> }
+    <div class="mb-3"><label class="form-label">Replace Venue Image</label><input type="file" name="imageFile" class="form-control" accept="image/*" /></div>
+    <button type="submit" class="btn btn-success">Update Venue</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>
+</div>
+@section Scripts { @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} }

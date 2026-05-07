@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="hero-card mb-4">
+    <span class="badge-soft">Admin booking platform</span>
+    <h1 class="display-5 page-title mt-3">Welcome to EaseEvents</h1>
+    <p class="lead mt-3">Manage venues, events and bookings from one simple system. The application uses SQL LocalDB for local data and Azurite local blob storage for venue images.</p>
+    <div class="mt-4 d-flex flex-wrap gap-2">
+        <a class="btn btn-primary btn-lg" asp-controller="Venues" asp-action="Index">Manage Venues</a>
+        <a class="btn btn-success btn-lg" asp-controller="Bookings" asp-action="Create">Create Booking</a>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-4"><div class="card p-4 h-100"><h4 class="page-title">Venues</h4><p>Add venue details, capacity, location and upload venue images.</p></div></div>
+    <div class="col-md-4"><div class="card p-4 h-100"><h4 class="page-title">Events</h4><p>Create events before assigning them to venues through bookings.</p></div></div>
+    <div class="col-md-4"><div class="card p-4 h-100"><h4 class="page-title">Bookings</h4><p>Prevent double bookings and search by booking ID or event name.</p></div></div>
+</div>

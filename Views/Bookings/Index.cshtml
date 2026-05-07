@@ -1,0 +1,25 @@
+@model IEnumerable<EventEase.Models.Booking>
+@{ ViewData["Title"] = "Bookings"; }
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="page-title">Bookings</h1>
+    <a asp-action="Create" class="btn btn-success">Create Booking</a>
+</div>
+<div class="card p-3 mb-3">
+    <form asp-action="Index" method="get" class="row g-2">
+        <div class="col-md-10"><input name="searchString" value="@ViewData["CurrentFilter"]" class="form-control" placeholder="Search by Booking ID or Event Name" /></div>
+        <div class="col-md-2 d-grid"><button class="btn btn-primary" type="submit">Search</button></div>
+    </form>
+</div>
+<div class="table-card p-3">
+<table class="table table-hover">
+    <thead><tr><th>Booking ID</th><th>Event</th><th>Venue</th><th>Location</th><th>Start</th><th>End</th><th></th></tr></thead>
+    <tbody>
+@foreach (var item in Model) {
+    <tr>
+        <td>@item.BookingID</td><td>@item.Event?.EventName</td><td>@item.Venue?.Name</td><td>@item.Venue?.Location</td><td>@item.StartDate.ToString("yyyy-MM-dd HH:mm")</td><td>@item.EndDate.ToString("yyyy-MM-dd HH:mm")</td>
+        <td class="text-end"><a asp-action="Details" asp-route-id="@item.BookingID" class="btn btn-outline-primary btn-sm">Details</a> <a asp-action="Edit" asp-route-id="@item.BookingID" class="btn btn-outline-success btn-sm">Edit</a> <a asp-action="Delete" asp-route-id="@item.BookingID" class="btn btn-outline-danger btn-sm">Delete</a></td>
+    </tr>
+}
+    </tbody>
+</table>
+</div>

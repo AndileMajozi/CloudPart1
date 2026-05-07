@@ -1,0 +1,16 @@
+@model EventEase.Models.Venue
+@{ ViewData["Title"] = "Create Venue"; }
+<h1 class="page-title">Create Venue</h1>
+<div class="card p-4">
+<form asp-action="Create" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+    <div class="mb-3"><label asp-for="Name" class="form-label"></label><input asp-for="Name" class="form-control" /><span asp-validation-for="Name" class="text-danger"></span></div>
+    <div class="mb-3"><label asp-for="Location" class="form-label"></label><input asp-for="Location" class="form-control" /><span asp-validation-for="Location" class="text-danger"></span></div>
+    <div class="mb-3"><label asp-for="Capacity" class="form-label"></label><input asp-for="Capacity" class="form-control" /><span asp-validation-for="Capacity" class="text-danger"></span></div>
+    <div class="mb-3"><label class="form-label">Upload Venue Image for Azurite</label><input type="file" name="imageFile" class="form-control" accept="image/*" /></div>
+    <input asp-for="ImageUrl" type="hidden" />
+    <button type="submit" class="btn btn-success">Save Venue</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>
+</div>
+@section Scripts { @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} }
